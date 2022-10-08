@@ -1,0 +1,101 @@
+
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Suicide Rate per 100k population (1985-2016)",
+    "width": 800,
+    "height": 350,
+    "data": {
+      "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+    "projection": {"type": "equirectangular"},
+    "layer": [
+      {
+        "transform": [
+          {
+            "calculate": "'Data is not available in ' + datum.properties.NAME",
+            "as": "note"
+          }
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {"tooltip": {"field": "note"}}
+      },
+      {
+        "transform": [
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/YKiat/VegaLite-Visualisation/main/suicide_dataset.csv"
+              },
+              "key": "country",
+              "fields": ["suicides_no", "population"]
+            }
+          },
+          {
+            "calculate": "datum.suicides_no/datum.population * 100000",
+            "as": "No. of Suicide in 100k Population"
+          }
+        ],
+        "mark": {"type": "geoshape", "stroke": "white"},
+        "encoding": {
+          "color": {
+            "field": "No. of Suicide in 100k Population",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+            {"field": "suicides_no", "type": "quantitative"},
+            {"field": "population", "type": "quantitative"},
+            {"field": "No. of Suicide in 100k Population", "type": "quantitative"}
+          ]
+        }
+      },
+      {
+         "transform": [{"filter": "datum.properties.NAME == 'Canada'"}],
+        "mark": {
+          "type": "text",
+          "font": "Open Sans",
+          "x": 190,
+          "y": 65,
+          "fontWeight": "bold",
+          "fontSize": 10
+        },
+        "encoding": {"text": {"value": "Canada"}}
+      },
+      {
+        "transform": [{"filter":"datum.properties.NAME =='Brazil' "}],
+        "mark":{
+          "type": "text",
+          "font":"Open Sans",
+          "x": 300,
+          "y": 190,
+          "fontWeight": "bold",
+          "fontSize": 10
+        },
+        "encoding": {"text": {"value": "Brazil"}}
+      },
+      {
+        "transform": [{"filter":"datum.properties.NAME =='Australia' "}],
+        "mark":{
+          "type": "text",
+          "font":"Open Sans",
+          "x": 660,
+          "y": 220,
+          "fontWeight": "bold",
+          "fontSize": 10
+        },
+        "encoding": {"text": {"value": "Australia"}}
+      },
+
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/YKiat/VegaLite-Visualisation/main/ne_110m.json",
+          "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+        },
+        "mark": {"type": "geoshape", "stroke": "lightgreen"}
+      }
+    ],
+
+    "config": {}
+  }
