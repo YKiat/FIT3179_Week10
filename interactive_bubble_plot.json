@@ -4,7 +4,7 @@
     "height": 350,
     "title": "Suicide Cases vs GDP",
     "data": {
-      "url": "https://raw.githubusercontent.com/YKiat/VegaLite-Visualisation/main/bubble_plot_data%20(1).csv"
+      "url": "https://raw.githubusercontent.com/YKiat/FIT3179_Week10/main/data_w10/bubble_plot_data.csv"
     },
     "params": [
       {
@@ -118,7 +118,7 @@
         "color":{"value":"black"},
         "opacity":{
           "condition":{
-              "test":  "datum['Country'] ==  'Sri Lanka' || datum['Country'] == 'Ukraine' || datum['Country'] ==  'Maldives' ||  datum['Country'] ==  'Japan' ||  datum['Country'] == 'United States'",  
+              "test":  "datum['Country'] ==  'Sri Lanka' || datum['Country'] == 'Ukraine' || datum['Country'] ==  'Russian Federation' ||  datum['Country'] ==  'Japan' ||  datum['Country'] == 'United States'",  
               "value": 1  
           },  
           "value": 0       
