@@ -1,8 +1,7 @@
-
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Suicide Rate per 100k population (1985-2016)",
-    "width": 800,
+    "width": 600,
     "height": 300,
     "data": {
       "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
@@ -56,8 +55,8 @@
         "mark": {
           "type": "text",
           "font": "Open Sans",
-          "x": 190,
-          "y": 65,
+          "x": 125,
+          "y": 42,
           "fontWeight": "bold",
           "fontSize": 10
         },
@@ -68,8 +67,8 @@
         "mark":{
           "type": "text",
           "font":"Open Sans",
-          "x": 300,
-          "y": 190,
+          "x": 250,
+          "y": 170,
           "fontWeight": "bold",
           "fontSize": 10
         },
@@ -80,7 +79,7 @@
         "mark":{
           "type": "text",
           "font":"Open Sans",
-          "x": 660,
+          "x": 550,
           "y": 220,
           "fontWeight": "bold",
           "fontSize": 10
