@@ -80,13 +80,24 @@
           "type": "text",
           "font":"Open Sans",
           "x": 350,
-          "y": 220,
+          "y": 190,
           "fontWeight": "bold",
           "fontSize": 10
         },
         "encoding": {"text": {"value": "Australia"}}
       },
-
+      {
+        "transform": [{"filter":"datum.properties.NAME =='Kazakhstan' "}],
+        "mark":{
+          "type": "text",
+          "font":"Open Sans",
+          "x": 300,
+          "y": 75,
+          "fontWeight": "bold",
+          "fontSize": 10
+        },
+        "encoding": {"text": {"value": "Australia"}}
+      },
       {
         "data": {
           "url": "https://raw.githubusercontent.com/YKiat/VegaLite-Visualisation/main/ne_110m.json",
