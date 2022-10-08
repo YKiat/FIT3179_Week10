@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 570,
-    "height": 300,
+    "width": 400,
+    "height": 200,
     "title": "Suicide Cases vs GDP",
     "data": {
       "url": "https://raw.githubusercontent.com/YKiat/FIT3179_Week10/main/data_w10/bubble_plot_data.csv"
