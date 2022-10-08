@@ -26,7 +26,7 @@
             "lookup": "properties.NAME",
             "from": {
               "data": {
-                "url": "https://raw.githubusercontent.com/YKiat/VegaLite-Visualisation/main/suicide_dataset.csv"
+                "url": "https://raw.githubusercontent.com/YKiat/FIT3179_Week10/main/data_w10/suicide_dataset.csv"
               },
               "key": "country",
               "fields": ["suicides_no", "population"]
